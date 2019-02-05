@@ -44,7 +44,7 @@ void THERMClass::end()
 
 uint32_t THERMClass::readSensor()
 {
-  uint32_t read=0x00;
+  uint32_t read = 0x00;
 
   digitalWrite(_cs, LOW);
   delayMicroseconds(1);
