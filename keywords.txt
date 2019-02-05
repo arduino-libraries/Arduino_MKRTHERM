@@ -1,0 +1,22 @@
+#######################################
+# Syntax Coloring Map For MKRTherm
+####################################### 
+# Class
+#######################################
+
+MKRTherm	KEYWORD1
+THERM	KEYWORD1
+
+#######################################
+# Methods and Functions 
+#######################################	
+
+begin	KEYWORD2
+end	KEYWORD2
+
+readCelsiusTemperature KEYWORD2
+readRefTemperature	KEYWORD2
+
+#######################################
+# Constants
+#######################################
