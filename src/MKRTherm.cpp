@@ -86,7 +86,7 @@ float THERMClass::readTemperature()
     rawword >>= 18;
   }
   // multiply for the LSB value
-  celsius = rawword*0.25f;
+  celsius = rawword * 0.25f;
 
   return celsius;
 }

@@ -26,11 +26,11 @@ void setup() {
 void loop() {
 
   Serial.print("ref ");
-  Serial.print(THERM.readRefTemperature());
+  Serial.print(THERM.readInternalTemperature());
   Serial.println(" °C");
 
   Serial.print("celcius ");
-  Serial.print(THERM.readCelsiusTemperature());
+  Serial.print(THERM.readTemperature());
   Serial.println(" °C");
 
   Serial.println();

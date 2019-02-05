@@ -22,18 +22,11 @@
 #define _MKRTHERM_H_
 
 
-#include "Arduino.h"
+#include <Arduino.h>
 #include <SPI.h>
 
 
 class THERMClass {
-private:
-  uint32_t readSensor();
-
-  int _cs;
-  SPIClass* _spi;
-  SPISettings _spiSettings;
-
 public:
   THERMClass(int cs = A4, SPIClass& spi = SPI);
 
@@ -43,6 +36,14 @@ public:
 
   float readTemperature();
   float readInternalTemperature();
+
+private:
+  uint32_t readSensor();
+
+  int _cs;
+  SPIClass* _spi;
+  SPISettings _spiSettings;
+
 };
 
 extern THERMClass THERM;
