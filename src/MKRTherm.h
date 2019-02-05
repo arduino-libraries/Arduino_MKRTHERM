@@ -1,6 +1,6 @@
 /*
   This file is part of the MKRTherm library.
-  Copyright (c) 2018 Arduino SA. All rights reserved.
+  Copyright (c) 2019 Arduino SA. All rights reserved.
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -28,16 +28,21 @@
 
 class THERMClass {
 private:
+  uint32_t readSensor();
+
   int _cs;
+  SPIClass* _spi;
+  SPISettings _spiSettings;
+
 public:
-  THERMClass(int cs = A4);
+  THERMClass(int cs = A4, SPIClass& spi = SPI);
 
   int begin();
   void end();
 
-  uint32_t readSensor();
-  double readCelsiusTemperature();
-  double readRefTemperature();
+
+  float readTemperature();
+  float readInternalTemperature();
 };
 
 extern THERMClass THERM;

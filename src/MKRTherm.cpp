@@ -1,6 +1,6 @@
 /*
   This file is part of the MKRTherm library.
-  Copyright (c) 2018 Arduino SA. All rights reserved.
+  Copyright (c) 2019 Arduino SA. All rights reserved.
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -19,9 +19,10 @@
 
 #include "MKRTherm.h"
 
-#include "SPI.h"
-
-THERMClass::THERMClass(int cs) : _cs(cs)
+THERMClass::THERMClass(int cs, SPIClass& spi) :
+  _cs(cs),
+  _spi(&spi),
+  _spiSettings(4000000, MSBFIRST, SPI_MODE0)
 {
 }
 
@@ -29,45 +30,45 @@ int THERMClass::begin()
 {
   pinMode(_cs, OUTPUT);
   digitalWrite(_cs, HIGH);
-  SPI.begin();
+  _spi->begin();
 
   return 1;
 }
 
 void THERMClass::end()
 {
-  SPI.end();
+  pinMode(_cs, INPUT);
+  digitalWrite(_cs, LOW);
+  _spi->end();
 }
 
 uint32_t THERMClass::readSensor()
 {
-  uint32_t read;
+  uint32_t read=0x00;
 
   digitalWrite(_cs, LOW);
-  delay(1);
+  delayMicroseconds(1);
 
-  SPI.beginTransaction(SPISettings(4000000, MSBFIRST, SPI_MODE0));
+  _spi->beginTransaction(_spiSettings);
 
-  read = SPI.transfer(0);
-  read <<= 8;
-  read |= SPI.transfer(0);
-  read <<= 8;
-  read |= SPI.transfer(0);
-  read <<= 8;
-  read |= SPI.transfer(0);
 
-  SPI.endTransaction();
+  for (int i = 0; i < 4; i++) {
+    read <<= 8;
+    read |= _spi->transfer(0);
+  }
+
+  _spi->endTransaction();
 
   digitalWrite(_cs, HIGH);
-  delay(1);
+
   return read;
 }
 
 
-double THERMClass::readCelsiusTemperature()
+float THERMClass::readTemperature()
 {
   uint32_t rawword;
-  double celsius;
+  float celsius;
 
   rawword = readSensor();
 
@@ -92,10 +93,10 @@ double THERMClass::readCelsiusTemperature()
 
 
 
-double THERMClass::readRefTemperature()
+float THERMClass::readInternalTemperature()
 {
   uint32_t rawword;
-  double ref;
+  float ref;
 
   rawword = readSensor();
 
