@@ -28,9 +28,18 @@ THERMClass::THERMClass(int cs, SPIClass& spi) :
 
 int THERMClass::begin()
 {
+  uint32_t rawword;
+
   pinMode(_cs, OUTPUT);
   digitalWrite(_cs, HIGH);
   _spi->begin();
+
+  rawword = readSensor();
+  if (rawword == 0xFFFFFF) {
+    end();
+
+    return 0;
+  }
 
   return 1;
 }
@@ -64,7 +73,6 @@ uint32_t THERMClass::readSensor()
   return read;
 }
 
-
 float THERMClass::readTemperature()
 {
   uint32_t rawword;
@@ -90,8 +98,6 @@ float THERMClass::readTemperature()
 
   return celsius;
 }
-
-
 
 float THERMClass::readInternalTemperature()
 {

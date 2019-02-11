@@ -20,7 +20,10 @@ void setup() {
 
   while (!Serial);
 
-  THERM.begin();
+  if (!THERM.begin()) {
+    Serial.println("Failed to initialize MKR Therm shield!");
+    while (1);
+  }
 }
 
 void loop() {
