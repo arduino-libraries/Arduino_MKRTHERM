@@ -1,5 +1,5 @@
 /*
-  This file is part of the MKRTherm library.
+  This file is part of the Arduino_MKRTHERM library.
   Copyright (c) 2019 Arduino SA. All rights reserved.
 
   This library is free software; you can redistribute it and/or
@@ -17,7 +17,7 @@
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-#include "MKRTherm.h"
+#include "MKRTHERM.h"
 
 THERMClass::THERMClass(int cs, SPIClass& spi) :
   _cs(cs),

@@ -1,10 +1,11 @@
 #######################################
-# Syntax Coloring Map For MKRTherm
+# Syntax Coloring Map For Arduino_MKRTHERM
 ####################################### 
 # Class
 #######################################
 
-MKRTherm	KEYWORD1
+Arduino_MKRTHERM	KEYWORD1
+MKRTHERM	KEYWORD1
 THERM	KEYWORD1
 
 #######################################

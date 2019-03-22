@@ -1,5 +1,5 @@
 /*
-  This file is part of the MKRTherm library.
+  This file is part of the Arduino_MKRTHERM library.
   Copyright (c) 2019 Arduino SA. All rights reserved.
 
   This library is free software; you can redistribute it and/or
@@ -17,14 +17,11 @@
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-
 #ifndef _MKRTHERM_H_
 #define _MKRTHERM_H_
 
-
 #include <Arduino.h>
 #include <SPI.h>
-
 
 class THERMClass {
 public:
@@ -32,7 +29,6 @@ public:
 
   int begin();
   void end();
-
 
   float readTemperature();
   float readInternalTemperature();
@@ -43,7 +39,6 @@ private:
   int _cs;
   SPIClass* _spi;
   SPISettings _spiSettings;
-
 };
 
 extern THERMClass THERM;
