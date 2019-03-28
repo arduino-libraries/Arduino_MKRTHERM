@@ -31,7 +31,7 @@ public:
   void end();
 
   float readTemperature();
-  float readInternalTemperature();
+  float readReferenceTemperature();
 
 private:
   uint32_t readSensor();

@@ -99,7 +99,7 @@ float THERMClass::readTemperature()
   return celsius;
 }
 
-float THERMClass::readInternalTemperature()
+float THERMClass::readReferenceTemperature()
 {
   uint32_t rawword;
   float ref;
