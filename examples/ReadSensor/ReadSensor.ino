@@ -33,7 +33,7 @@ void loop() {
   Serial.print(THERM.readReferenceTemperature());
   Serial.println(" °C");
 
-  Serial.print("Thermocouple temperature ");
+  Serial.print("Temperature ");
   Serial.print(THERM.readTemperature());
   Serial.println(" °C");
 
