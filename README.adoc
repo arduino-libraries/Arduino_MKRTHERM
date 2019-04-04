@@ -1,6 +1,9 @@
 = MKRTHERM Library for Arduino =
 
-Allows you to read the temperature sensors  conencted to your MKR THERM shield.
+Allows you to read the temperature sensors connected to your MKR THERM shield.
+
+For more information about this library please visit us at https://www.arduino.cc/en/Reference/Arduino_MKRTHERM
+
 
 == License ==
 
