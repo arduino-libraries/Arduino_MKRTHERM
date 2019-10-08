@@ -1,5 +1,7 @@
 = MKRTHERM Library for Arduino =
 
+image:https://github.com/arduino-libraries/Arduino_MKRTHERM/workflows/Compile%20Examples/badge.svg["Compile Examples Status", link="https://github.com/arduino-libraries/Arduino_MKRTHERM/actions?workflow=Compile+Examples"] image:https://github.com/arduino-libraries/Arduino_MKRTHERM/workflows/Spell%20Check/badge.svg["Spell Check Status", link="https://github.com/arduino-libraries/Arduino_MKRTHERM/actions?workflow=Spell+Check"]
+
 Allows you to read the temperature sensors connected to your MKR THERM shield.
 
 For more information about this library please visit us at https://www.arduino.cc/en/Reference/Arduino_MKRTHERM
