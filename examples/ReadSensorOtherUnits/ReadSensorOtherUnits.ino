@@ -1,7 +1,7 @@
 /*
   MKR THERM Shield - Read Sensors
 
-  This example reads the temperatures measured by the thermocouple
+  This example reads the temperatures (in fahrenheit and kelvin) measured by the thermocouple
   connected to the MKR THERM shield and prints them to the Serial Monitor
   once a second.
 
