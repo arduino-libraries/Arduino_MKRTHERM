@@ -23,6 +23,12 @@
 #include <Arduino.h>
 #include <SPI.h>
 
+enum {
+  FAHRENHEIT,
+  CELSIUS,
+  KELVIN
+};
+
 class THERMClass {
 public:
   THERMClass(int cs = A4, SPIClass& spi = SPI);
@@ -30,7 +36,7 @@ public:
   int begin();
   void end();
 
-  float readTemperature();
+  float readTemperature(int units = CELSIUS);
   float readReferenceTemperature();
 
 private:
