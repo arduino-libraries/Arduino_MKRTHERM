@@ -1,7 +1,7 @@
 /*
   MKR THERM Shield - Read Sensors
 
-  This example reads the temperatures (in fahrenheit and kelvin) measured by the thermocouple
+  This example reads the temperatures (in Fahrenheit and kelvins) measured by the thermocouple
   connected to the MKR THERM shield and prints them to the Serial Monitor
   once a second.
 
@@ -33,13 +33,13 @@ void loop() {
   Serial.print(THERM.readReferenceTemperature());
   Serial.println(" °C");
 
-  Serial.print("Temperature in Fahrenheit");
+  Serial.print("Temperature in Fahrenheit ");
   Serial.print(THERM.readTemperature(FAHRENHEIT));
   Serial.println(" °F");
 
-  Serial.print("Temperature in Kelvin");
+  Serial.print("Temperature in Kelvin ");
   Serial.print(THERM.readTemperature(KELVIN));
-  Serial.println(" °F");
+  Serial.println(" K");
 
   Serial.println();
 

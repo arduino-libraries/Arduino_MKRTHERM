@@ -96,17 +96,12 @@ float THERMClass::readTemperature(int units)
   // multiply for the LSB value
   celsius = rawword * 0.25f;
 
-  if(units=FAHRENHEIT)
-  {
-      return (celsius * 9.0 / 5.0) + 32.0;
-  }
-  else if(units=KELVIN)
-  {
-      return (celsius + 273.15);
-  }
-  else if(units=CELSIUS)
-  {
-      return celsius;
+  if (units == FAHRENHEIT) {
+    return (celsius * 9.0 / 5.0) + 32.0;
+  } else if(units == KELVIN) {
+    return (celsius + 273.15);
+  } else {
+    return celsius;
   }
 }
 
