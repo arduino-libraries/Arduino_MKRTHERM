@@ -1,6 +1,6 @@
 #######################################
 # Syntax Coloring Map For Arduino_MKRTHERM
-####################################### 
+#######################################
 # Class
 #######################################
 
@@ -9,8 +9,8 @@ MKRTHERM	KEYWORD1
 THERM	KEYWORD1
 
 #######################################
-# Methods and Functions 
-#######################################	
+# Methods and Functions
+#######################################
 
 begin	KEYWORD2
 end	KEYWORD2
@@ -21,3 +21,7 @@ readReferenceTemperature	KEYWORD2
 #######################################
 # Constants
 #######################################
+
+FAHRENHEIT	LITERAL1
+CELSIUS	LITERAL1
+KELVIN	LITERAL1
