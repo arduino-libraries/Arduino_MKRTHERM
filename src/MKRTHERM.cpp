@@ -73,7 +73,7 @@ uint32_t THERMClass::readSensor()
   return read;
 }
 
-float THERMClass::readTemperature()
+float THERMClass::readTemperature(int units)
 {
   uint32_t rawword;
   float celsius;
@@ -82,9 +82,9 @@ float THERMClass::readTemperature()
 
   // Check for reading error
   if (rawword & 0x7) {
-    return NAN; 
+    return NAN;
   }
-  // The temperature is stored in the last 14 word's bits 
+  // The temperature is stored in the last 14 word's bits
   // sendend by the Thermocouple-to-Digital Converter
   if (rawword & 0x80000000) {
     // Negative value, drop the lower 18 bits and explicitly extend sign bits.
@@ -96,7 +96,13 @@ float THERMClass::readTemperature()
   // multiply for the LSB value
   celsius = (int32_t)rawword * 0.25f;
 
-  return celsius;
+  if (units == FAHRENHEIT) {
+    return (celsius * 9.0 / 5.0) + 32.0;
+  } else if(units == KELVIN) {
+    return (celsius + 273.15);
+  } else {
+    return celsius;
+  }
 }
 
 float THERMClass::readReferenceTemperature()
