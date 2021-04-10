@@ -2,13 +2,13 @@
   MKR THERM Shield - Read Sensors
 
   This example reads the temperatures (in Fahrenheit and kelvins) measured by the thermocouple
-  connected to the MKR THERM shield and prints them to the Serial Monitor
+  connected to the MKR THERM Shield and prints them to the Serial Monitor
   once a second.
 
   The circuit:
   - Arduino MKR board
   - Arduino MKR THERM Shield attached
-  - A K Type thermocouple temperature sensor connected to the shield
+  - A type K thermocouple temperature sensor connected to the shield
 
   This example code is in the public domain.
 */
@@ -22,7 +22,7 @@ void setup() {
   while (!Serial);
 
   if (!THERM.begin()) {
-    Serial.println("Failed to initialize MKR THERM shield!");
+    Serial.println("Failed to initialize MKR THERM Shield!");
     while (1);
   }
 }
@@ -37,7 +37,7 @@ void loop() {
   Serial.print(THERM.readTemperature(FAHRENHEIT));
   Serial.println(" °F");
 
-  Serial.print("Temperature in Kelvin ");
+  Serial.print("Temperature in kelvin ");
   Serial.print(THERM.readTemperature(KELVIN));
   Serial.println(" K");
 
