@@ -1,10 +1,13 @@
-= MKRTHERM Library for Arduino =
+:repository-owner: arduino-libraries
+:repository-name: Arduino_MKRTHERM
 
-image:https://github.com/arduino-libraries/Arduino_MKRTHERM/workflows/Compile%20Examples/badge.svg["Compile Examples Status", link="https://github.com/arduino-libraries/Arduino_MKRTHERM/actions?workflow=Compile+Examples"] image:https://github.com/arduino-libraries/Arduino_MKRTHERM/workflows/Spell%20Check/badge.svg["Spell Check Status", link="https://github.com/arduino-libraries/Arduino_MKRTHERM/actions?workflow=Spell+Check"]
+= {repository-name} Library for Arduino =
+
+image:https://github.com/{repository-owner}/{repository-name}/actions/workflows/compile-examples.yml/badge.svg["Compile Examples status", link="https://github.com/{repository-owner}/{repository-name}/actions/workflows/compile-examples.yml"]
 
 Allows you to read the temperature sensors connected to your MKR THERM shield.
 
-For more information about this library please visit us at https://www.arduino.cc/en/Reference/Arduino_MKRTHERM
+For more information about this library please visit us at https://www.arduino.cc/en/Reference/{repository-name}
 
 
 == License ==
