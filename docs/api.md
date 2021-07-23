@@ -32,8 +32,8 @@ if (!THERM.begin()) {
 #### See also
 
 * [end()](#end)
-* [readTemperature()](#readTemperature)
-* [readReferenceTemperature()](#readReferenceTemperature)
+* [readTemperature()](#readtemperature)
+* [readReferenceTemperature()](#readreferencetemperature)
 
 ### `end()`
 
@@ -62,8 +62,8 @@ THERM.end();
 #### See also
 
 * [begin()](#begin)
-* [readTemperature()](#readTemperature)
-* [readReferenceTemperature()](#readReferenceTemperature)
+* [readTemperature()](#readtemperature)
+* [readReferenceTemperature()](#readreferencetemperature)
 
 ### `readTemperature()`
 
@@ -95,7 +95,7 @@ Serial.println(" °C");
 
 * [begin()](#begin)
 * [end()](#end)
-* [readReferenceTemperature()](#readReferenceTemperature)
+* [readReferenceTemperature()](#readreferencetemperature)
 
 ### `readReferenceTemperature()`
 
@@ -127,4 +127,4 @@ Serial.println(" °C");
 
 * [begin()](#begin)
 * [end()](#end)
-* [readTemperature()](#readTemperature)
+* [readTemperature()](#readtemperature)
